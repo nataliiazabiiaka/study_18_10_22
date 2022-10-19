@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_18_10_22/screens(welcome)/constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
