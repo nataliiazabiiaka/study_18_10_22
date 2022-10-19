@@ -1,6 +1,6 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightThemeData(BuildContext context) {
  // var appBarTheme;
@@ -15,6 +15,12 @@ ThemeData lightThemeData(BuildContext context) {
         primary: kPrimaryColor,
         secondary: kSecondaryColor,
         error: kErrorColor,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      selectedItemColor: kContentColorLightTheme.withOpacity(0.7),
+      unselectedIconTheme: kContentColorLightTheme.withOpacity(0.32),
+      selectedIconTheme: IconThemeData(color: kPrimaryColor),
     ),
   );
 }
@@ -33,5 +39,13 @@ ThemeData darkThemeData(BuildContext context) {
       secondary: kSecondaryColor,
       error: kErrorColor,
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: kContentColorLightTheme,
+      selectedItemColor: Colors.white70,
+      unselectedIconTheme: kContentColorDarkTheme.withOpacity(0.32),
+      selectedIconTheme: IconThemeData(color: kPrimaryColor),
+    ),
   );
 }
+
+final appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
