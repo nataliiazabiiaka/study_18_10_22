@@ -1,16 +1,15 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightThemeData(BuildContext context) {
- // var appBarTheme;
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme,
-    iconTheme: const IconThemeData(color: kContentColorLightTheme),
-     //  textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-     // .apply(bodyColor: kContentColorLightTheme),
+    iconTheme: IconThemeData(color: kContentColorLightTheme),
+       textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+      .apply(bodyColor: kContentColorLightTheme),
     colorScheme: const ColorScheme.light(
         primary: kPrimaryColor,
         secondary: kSecondaryColor,
@@ -19,21 +18,20 @@ ThemeData lightThemeData(BuildContext context) {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: kContentColorLightTheme.withOpacity(0.7),
-      unselectedIconTheme: kContentColorLightTheme.withOpacity(0.32),
+      unselectedItemColor: kContentColorLightTheme.withOpacity(0.32),
       selectedIconTheme: IconThemeData(color: kPrimaryColor),
     ),
   );
 }
 
 ThemeData darkThemeData(BuildContext context) {
- // var appBarTheme;
   return ThemeData.dark().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kContentColorLightTheme,
     appBarTheme: appBarTheme,
     iconTheme: const IconThemeData(color: kContentColorDarkTheme),
-    // textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-    // .apply(bodyColor: kContentColorLightTheme),
+     textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+     .apply(bodyColor: kContentColorLightTheme),
     colorScheme: const ColorScheme.dark(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
@@ -42,7 +40,7 @@ ThemeData darkThemeData(BuildContext context) {
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kContentColorLightTheme,
       selectedItemColor: Colors.white70,
-      unselectedIconTheme: kContentColorDarkTheme.withOpacity(0.32),
+      unselectedItemColor: kContentColorDarkTheme.withOpacity(0.32),
       selectedIconTheme: IconThemeData(color: kPrimaryColor),
     ),
   );
