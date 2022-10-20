@@ -3,6 +3,7 @@ import 'package:study_18_10_22/screens(welcome)/constants.dart';
 import 'package:study_18_10_22/components/filled_outline_button.dart';
 import 'package:study_18_10_22/models/Chat.dart';
 import 'package:study_18_10_22/screens(welcome)/chats/components/chat_card.dart';
+import 'package:study_18_10_22/screens(welcome)/messages/message_screen.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -32,10 +33,16 @@ class Body extends StatelessWidget {
             itemCount: chatsData.length,
             itemBuilder: (context, index) => ChatCard(
               chat: chatsData[index],
-              press: () {},),
+              press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                   builder: (context) => MessagesScreen(),
+    ),
+            ),
           ),
         ),
-      ],
+    ),
+    ],
     );
   }
 }

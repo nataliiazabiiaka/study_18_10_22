@@ -37,7 +37,7 @@ List demeChatMessages = [
     isSender: false,
   ),
   ChatMessage(
-    text: "",
+    text: '',
     messageType: ChatMessageType.video,
     messageStatus: MessageStatus.viewed,
     isSender: true,
