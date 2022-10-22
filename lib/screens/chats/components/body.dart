@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:study_18_10_22/screens(welcome)/constants.dart';
-import 'package:study_18_10_22/components/filled_outline_button.dart';
-import 'package:study_18_10_22/models/Chat.dart';
-import 'package:study_18_10_22/screens(welcome)/chats/components/chat_card.dart';
-import 'package:study_18_10_22/screens(welcome)/messages/message_screen.dart';
+
+import '../../../components/filled_outline_button.dart';
+import '../../../models/chat.dart';
+import '../../constants.dart';
+import '../../messages/message_screen.dart';
+import 'chat_card.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -14,7 +15,11 @@ class Body extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.fromLTRB(
-              kDefaultPadding, 0, kDefaultPadding, kDefaultPadding),
+            kDefaultPadding,
+            0,
+            kDefaultPadding,
+            kDefaultPadding,
+          ),
           color: kPrimaryColor,
           child: Row(
             children: [
@@ -31,18 +36,22 @@ class Body extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             itemCount: chatsData.length,
-            itemBuilder: (context, index) => ChatCard(
-              chat: chatsData[index],
-              press: () => Navigator.push(
+            itemBuilder: (context, index) {
+              final data = chatsData[index];
+              return ChatCard(
+                chat: data,
+                press: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                   builder: (context) => MessagesScreen(),
-    ),
-            ),
+                    builder: (context) =>
+                        MessagesScreen(photo: data.image, name: data.name),
+                  ),
+                ),
+              );
+            },
           ),
         ),
-    ),
-    ],
+      ],
     );
   }
 }

@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+enum ChatMessageType { text, audio, image, video }
 
-enum ChatMessageType{text, audio, image, video}
-enum MessageStatus{not_sent, not_view, viewed}
+enum MessageStatus { notSent, notView, viewed }
 
 class ChatMessage {
   final String text;
@@ -10,19 +9,19 @@ class ChatMessage {
   final bool isSender;
 
   ChatMessage({
-  required this.text,
-  required this.messageType,
-  required this.messageStatus,
-  required this.isSender,
-});
+    required this.text,
+    required this.messageType,
+    required this.messageStatus,
+    required this.isSender,
+  });
 }
 
 List demeChatMessages = [
   ChatMessage(
-      text: 'Hi Sajol',
-      messageType: ChatMessageType.text,
-      messageStatus: MessageStatus.viewed,
-      isSender: false,
+    text: 'Hi Sajol',
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: false,
   ),
   ChatMessage(
     text: 'Hello, how are you?',
@@ -43,21 +42,21 @@ List demeChatMessages = [
     isSender: true,
   ),
   ChatMessage(
-    text: "Error happend",
+    text: 'Error happend',
     messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.not_sent,
+    messageStatus: MessageStatus.notSent,
     isSender: true,
   ),
   ChatMessage(
-    text: "This looks great man!!",
+    text: 'This looks great man!!',
     messageType: ChatMessageType.text,
     messageStatus: MessageStatus.viewed,
     isSender: false,
   ),
   ChatMessage(
-    text: "Glad you like it",
+    text: 'Glad you like it',
     messageType: ChatMessageType.text,
-    messageStatus: MessageStatus.not_view,
+    messageStatus: MessageStatus.notView,
     isSender: true,
   ),
 ];

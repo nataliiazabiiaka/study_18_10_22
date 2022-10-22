@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:study_18_10_22/screens(welcome)/constants.dart';
-import 'package:study_18_10_22/models/Chat.dart';
 
+import '../../../models/chat.dart';
+import '../../constants.dart';
 
 class ChatCard extends StatelessWidget {
   const ChatCard({
     Key? key,
     required this.chat,
-    required this.press}) : super(key: key);
+    required this.press,
+  }) : super(key: key);
 
   final Chat chat;
   final VoidCallback press;
@@ -18,7 +19,9 @@ class ChatCard extends StatelessWidget {
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            horizontal: kDefaultPadding, vertical: kDefaultPadding * 0.75),
+          horizontal: kDefaultPadding,
+          vertical: kDefaultPadding * 0.75,
+        ),
         child: Row(
           children: [
             Stack(
@@ -38,9 +41,7 @@ class ChatCard extends StatelessWidget {
                         color: kPrimaryColor,
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: Theme
-                              .of(context)
-                              .scaffoldBackgroundColor,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           width: 3,
                         ),
                       ),
@@ -50,14 +51,17 @@ class ChatCard extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       chat.name,
                       style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w500),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     const SizedBox(height: 8),
                     Opacity(

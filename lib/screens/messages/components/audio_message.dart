@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../models/ChatMessage.dart';
+
+import '../../../models/chat_message.dart';
 import '../../constants.dart';
 
 class AudioMessage extends StatelessWidget {
@@ -11,8 +12,8 @@ class AudioMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.55,
-      padding: EdgeInsets.symmetric(
-        horizontal: kDefaultPadding *0.75,
+      padding: const EdgeInsets.symmetric(
+        horizontal: kDefaultPadding * 0.75,
         vertical: kDefaultPadding / 2.5,
       ),
       decoration: BoxDecoration(
@@ -23,7 +24,7 @@ class AudioMessage extends StatelessWidget {
         children: [
           Icon(
             Icons.play_arrow,
-            color:  message.isSender ? Colors.white : kPrimaryColor,
+            color: message.isSender ? Colors.white : kPrimaryColor,
           ),
           Expanded(
             child: Padding(
@@ -38,8 +39,8 @@ class AudioMessage extends StatelessWidget {
                     width: double.infinity,
                     height: 2,
                     color: message.isSender
-                    ? Colors.white
-                    : kPrimaryColor.withOpacity(0.4),
+                        ? Colors.white
+                        : kPrimaryColor.withOpacity(0.4),
                   ),
                   Positioned(
                     left: 0,
@@ -47,9 +48,7 @@ class AudioMessage extends StatelessWidget {
                       height: 8,
                       width: 8,
                       decoration: BoxDecoration(
-                        color: message.isSender
-                            ? Colors.white
-                            : kPrimaryColor,
+                        color: message.isSender ? Colors.white : kPrimaryColor,
                         shape: BoxShape.circle,
                       ),
                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:study_18_10_22/screens(welcome)/constants.dart';
+
+import '../screens/constants.dart';
 
 class FillOutlineButton extends StatelessWidget {
   const FillOutlineButton({
@@ -13,7 +14,6 @@ class FillOutlineButton extends StatelessWidget {
   final VoidCallback press;
   final String text;
 
-
 //  get kContentColorLightTheme => null;
 
   @override
@@ -24,7 +24,7 @@ class FillOutlineButton extends StatelessWidget {
         side: const BorderSide(color: Colors.white),
       ),
       elevation: isFilled ? 2 : 0,
-      color:  isFilled ? Colors.white : Colors.transparent,
+      color: isFilled ? Colors.white : Colors.transparent,
       onPressed: press,
       child: Text(
         text,

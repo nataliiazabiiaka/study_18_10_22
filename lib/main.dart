@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'welcome_screen.dart';
-import 'theme.dart';
+
+import 'screens/theme.dart';
+import 'screens/welcome_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

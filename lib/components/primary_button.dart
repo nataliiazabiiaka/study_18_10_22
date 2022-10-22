@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:study_18_10_22/screens(welcome)/constants.dart';
+
+import '../screens/constants.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
@@ -12,10 +13,10 @@ class PrimaryButton extends StatelessWidget {
 
   final String text;
   final VoidCallback press;
-  final color;
+  final Color color;
   final EdgeInsets padding;
 
- // get kPrimaryColor => null;
+  // get kPrimaryColor => null;
 
   @override
   Widget build(BuildContext context) {

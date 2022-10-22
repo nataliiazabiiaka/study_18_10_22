@@ -1,25 +1,26 @@
-import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'constants.dart';
 
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme,
-    iconTheme: IconThemeData(color: kContentColorLightTheme),
-       textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-      .apply(bodyColor: kContentColorLightTheme),
+    iconTheme: const IconThemeData(color: kContentColorLightTheme),
+    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+        .apply(bodyColor: kContentColorLightTheme),
     colorScheme: const ColorScheme.light(
-        primary: kPrimaryColor,
-        secondary: kSecondaryColor,
-        error: kErrorColor,
+      primary: kPrimaryColor,
+      secondary: kSecondaryColor,
+      error: kErrorColor,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: kContentColorLightTheme.withOpacity(0.7),
       unselectedItemColor: kContentColorLightTheme.withOpacity(0.32),
-      selectedIconTheme: IconThemeData(color: kPrimaryColor),
+      selectedIconTheme: const IconThemeData(color: kPrimaryColor),
     ),
   );
 }
@@ -30,8 +31,8 @@ ThemeData darkThemeData(BuildContext context) {
     scaffoldBackgroundColor: kContentColorLightTheme,
     appBarTheme: appBarTheme,
     iconTheme: const IconThemeData(color: kContentColorDarkTheme),
-     textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
-     .apply(bodyColor: kContentColorLightTheme),
+    textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
+        .apply(bodyColor: kContentColorLightTheme),
     colorScheme: const ColorScheme.dark(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
@@ -41,9 +42,9 @@ ThemeData darkThemeData(BuildContext context) {
       backgroundColor: kContentColorLightTheme,
       selectedItemColor: Colors.white70,
       unselectedItemColor: kContentColorDarkTheme.withOpacity(0.32),
-      selectedIconTheme: IconThemeData(color: kPrimaryColor),
+      selectedIconTheme: const IconThemeData(color: kPrimaryColor),
     ),
   );
 }
 
-final appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
+const appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
